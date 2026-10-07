@@ -1,6 +1,5 @@
 function formatAs12HourClock(time) {
-
-
+  
   const [hoursStr, minutesStr] = time.split(':');
   const hours = Number(hoursStr);
   const minutes = minutesStr;
@@ -16,6 +15,7 @@ function formatAs12HourClock(time) {
   if (hours > 12) {
     return `${hours - 12}:${minutes} pm`;
   }
+
   const formattedHours = String(hours).padStart(2, '0');
   return `${formattedHours}:${minutes} am`;
 }

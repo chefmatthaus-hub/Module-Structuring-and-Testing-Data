@@ -42,6 +42,10 @@ test("correctly convert early afternoon hours", () => {
     assert.equal(formatAs12HourClock("13:00"), "1:00 pm");
 });
 
+test("correctly convert single-digit morning hours if supported", () => {
+    assert(formatAs12HourClock("08:30"), "8:30am");
+});
+
 /*
 Edge cases:
 Correctly convert hours after 12:00
@@ -84,4 +88,8 @@ Input | Expected
 Correctly convert early afternoon hours 
 Input | Expected
 13:00   1:00 pm
+
+Correctly convert single-digit morning hours if supported
+Input | Expected
+08:30   8:30 am
 */
