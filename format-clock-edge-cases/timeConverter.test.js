@@ -25,7 +25,22 @@ test("can correctly convert morning time minutes", () => {
 test("can successfully convert midnight time", () =>
     assert.equal(formatAs12HourClock("24:00"), "12:00 am"));
 
+test("correctly convert midnight 00:00", () => {
+    assert.equal(formatAs12HourClock("00:00"), "12:00 am");
+});
 
+test("correctly convert noon 12:00", () => {
+    assert.equal(formatAs12HourClock("12:00"), "12:00 pm");
+});
+
+test("correctly convert boundary time around noon", () => {
+    assert.equal(formatAs12HourClock("11:59"), "11:59 am");
+    assert.equal(formatAs12HourClock("12:01"), "12:01 pm");
+});
+
+test("correctly convert early afternoon hours", () => {
+    assert.equal(formatAs12HourClock("13:00"), "1:00 pm");
+});
 
 /*
 Edge cases:
@@ -52,4 +67,21 @@ Input | Expected
 Correctly convert midnight time
 Input | Expected
 24:00   12:00 am
+
+Correctly convert midnight
+Input | Expected
+00:00   12:00 am
+
+Correctly convert noon
+Input | Expected
+12:00   12:00 pm
+
+Correctly convert boundary time around noon
+Input | Expected
+11:59   11:59 am
+12:01   12:01 pm
+
+Correctly convert early afternoon hours 
+Input | Expected
+13:00   1:00 pm
 */
