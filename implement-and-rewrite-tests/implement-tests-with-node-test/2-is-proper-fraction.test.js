@@ -15,7 +15,7 @@ test("Returns true for 2/8", () => {
   assert.equal(isProperFraction(2, 8), true);
 });
 
-test("Returns true when the numerator is zero and denominator is positive (0/1)", () => {
+test("Returns true when the numerator is zero and denominator is positive", () => {
   assert.equal(isProperFraction(0, 1), true);
 });
 
@@ -35,11 +35,11 @@ test("Returns true when both numerator and denominator is negative", () => {
   assert.equal(isProperFraction(-1, -2), true);
 });
 
-test("Returns true when the denominator is negative", () => {
+test("Returns true when the numerator is positive denominator is negative", () => {
   assert.equal(isProperFraction(1, -2), true);
 });
 
-test("Returns true when the numerator is negative", () => {
+test("Returns true when the numerator is negative and the denominator is positive", () => {
   assert.equal(isProperFraction(-1, 2), true);
 });
 
