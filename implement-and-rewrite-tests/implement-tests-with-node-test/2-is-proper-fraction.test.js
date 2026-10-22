@@ -11,24 +11,8 @@ test("Returns true for a basic proper fraction", () => {
   assert.equal(isProperFraction(1, 2), true);
 });
 
-test("Returns true for 2/8", () => {
-  assert.equal(isProperFraction(2, 8), true);
-});
-
 test("Returns true when the numerator is zero and denominator is positive", () => {
   assert.equal(isProperFraction(0, 1), true);
-});
-
-test("Returns true for 5/8", () => {
-  assert.equal(isProperFraction(5, 8), true);
-});
-
-test("Returns true for 8/9", () => {
-  assert.equal(isProperFraction(8, 9), true);
-});
-
-test("Returns true for another proper fraction with a smaller numerator", () => {
-  assert.equal(isProperFraction(2, 4), true);
 });
 
 test("Returns true when both numerator and denominator is negative", () => {
@@ -43,28 +27,8 @@ test("Returns true when the numerator is negative and the denominator is positiv
   assert.equal(isProperFraction(-1, 2), true);
 });
 
-test("Returns false when the numerator is greater than the denominator", () => {
-  assert.equal(isProperFraction(9, 8), false);
-});
-
 test("Returns false when numerator is negative and denominator is zero", () => {
   assert.equal(isProperFraction(-1, 0), false);
-});
-
-test("Returns false for 4/2", () => {
-  assert.equal(isProperFraction(4, 2), false);
-});
-
-test("Returns false for 5/3", () => {
-  assert.equal(isProperFraction(5, 3), false);
-});
-
-test("Returns false for 6/4", () => {
-  assert.equal(isProperFraction(6, 4), false);
-});
-
-test("Returns false for 7/1", () => {
-  assert.equal(isProperFraction(7, 1), false);
 });
 
 test("Returns false for 15/14", () => {
@@ -76,5 +40,29 @@ test("Returns false when numerator equals denominator", () => {
 });
 
 test("Returns false when numerator is positive and denominator is zero", () => {
-  assert.equal(isProperFraction(1,0), false);
-})
+  assert.equal(isProperFraction(1, 0), false);
+});
+
+test("Returns false when both numerator and denominator are zero", () => {
+  assert.equal(isProperFraction(0, 0), false);
+});
+
+test("Returns true when numerator is zero and denominator is negative", () => {
+  assert.equal(isProperFraction(0, -2), true);
+});
+
+test("Returns false when positive numerator has greater magnitude than negative denominator", () => {
+  assert.equal(isProperFraction(3, -2), false);
+});
+
+test("Returns false when negative numerator has greater magnitude than positive denominator", () => {
+  assert.equal(isProperFraction(-3, 2), false);
+});
+
+test("Returns false when both numbers are negative and numerator has greater magnitude", () => {
+  assert.equal(isProperFraction(-3, -2), false);
+});
+
+test("Returns false when numerator and denominator are equal negative numbers", () => {
+  assert.equal(isProperFraction(-4, -4), false);
+});

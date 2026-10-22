@@ -44,7 +44,7 @@ test("Return true when numerator is zero and denominator is negative", () => {
   expect(isProperFraction(0, -2)).toEqual(true);
 });
 
-test("Returns false when negative numerator has greater magnitude than positive denominator", () => {
+test("Returns false when positive numerator has greater magnitude than negative denominator", () => {
   expect(isProperFraction(3, -2)).toEqual(false);
 });
 
